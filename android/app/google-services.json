@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "488277976222",
+    "project_id": "boilerplate-64538",
+    "storage_bucket": "boilerplate-64538.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488277976222:android:be37ec6af3a328c075c78f",
+        "android_client_info": {
+          "package_name": "com.sinbad.boilerplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488277976222-drepo9croj3tcbbmep22v7ufvmsppd8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk7I7DfDTeWyPxEnPCPhRA6kcybWue9-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488277976222-drepo9croj3tcbbmep22v7ufvmsppd8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

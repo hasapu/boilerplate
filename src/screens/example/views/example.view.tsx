@@ -1,18 +1,24 @@
-/** === IMPORT PACKAGE HERE === */
+/** === IMPORT PACKAGE ===  */
 import React from 'react';
 import { SnbContainer, SnbText } from 'react-native-sinbad-ui';
+/** === IMPORT EXTERNAL COMPONENT === */
+/** === IMPORT EXTERNAL FUNCTION === */
+/** === STYLES === */
+/** === INTERFACE/MODEL === */
 /** === COMPONENT === */
-const HomeView: React.FC = () => {
+const ExampleView: React.FC = () => {
+  /** === HOOK === */
+  /** === EFFECT === */
+  /** === VIEW === */
   /** => main */
   return (
     <SnbContainer color="white">
-      <SnbText.B1>Home</SnbText.B1>
+      <SnbText.B1>This is Example page</SnbText.B1>
     </SnbContainer>
   );
 };
 
-export default HomeView;
-
+export default ExampleView;
 /**
  * ================================================================
  * NOTES

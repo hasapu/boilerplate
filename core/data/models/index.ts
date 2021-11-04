@@ -1,18 +1,11 @@
 /**
  * ============================================================
- * REGISTER ALL REDUCERS HERE
+ * REGISTER ALL INTERFACE HERE
  * ============================================================
  */
-import { combineReducers } from 'redux';
-import { permanent, global, auth } from '@core/data/reducers';
-
-export const rootReducer = combineReducers({
-  permanent,
-  global,
-  auth,
-});
-
-export type RootState = ReturnType<typeof rootReducer>;
+export * from './permanent';
+export * from './global';
+export * from './auth';
 /**
  * ================================================================
  * NOTES

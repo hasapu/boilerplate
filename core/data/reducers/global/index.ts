@@ -4,15 +4,11 @@
  * ============================================================
  */
 import { combineReducers } from 'redux';
-import { permanent, global, auth } from '@core/data/reducers';
+import { flagRTDB } from './flag-rtdb/flag-rtdb.reducer';
 
-export const rootReducer = combineReducers({
-  permanent,
-  global,
-  auth,
+export const global = combineReducers({
+  flagRTDB,
 });
-
-export type RootState = ReturnType<typeof rootReducer>;
 /**
  * ================================================================
  * NOTES

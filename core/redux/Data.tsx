@@ -1,16 +1,25 @@
 /** === IMPORT PACKAGE HERE === */
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import * as models from '@models';
 /** === IMPORT EXTERNAL FUNCTION HERE === */
 import { RootState } from '@reducers';
+/** === IMPORT TYPE === */
+import type { AuthProps } from '../data/reducers/auth';
 /** === FUNCTION === */
-const useDataGlobal = () => {
-  return useSelector((state: RootState) => state.permanent.global);
+/** => for data permanent */
+const useDataPermanent = (): models.Permanent => {
+  return useSelector((state: RootState) => state.permanent);
 };
-const useDataVoucher = () => {
-  return useSelector((state: RootState) => state.voucher);
+/** => for flag rtdb */
+const useDataFlagRTDB = (): models.FlagRTDB => {
+  return useSelector((state: RootState) => state.global.flagRTDB);
+};
+/** => for auth data */
+const useDataAuth = (): AuthProps => {
+  return useSelector((state: RootState) => state.auth);
 };
 /** === EXPORT === */
-export { useDataGlobal, useDataVoucher };
+export { useDataPermanent, useDataFlagRTDB, useDataAuth };
 /**
  * ================================================================
  * NOTES

@@ -1,18 +1,9 @@
 /**
  * ============================================================
- * REGISTER ALL REDUCERS HERE
+ * ALL VARIABLE THAT WILL USED BY ACTIONS, REDUCERS, AND SAGAS
  * ============================================================
  */
-import { combineReducers } from 'redux';
-import { permanent, global, auth } from '@core/data/reducers';
-
-export const rootReducer = combineReducers({
-  permanent,
-  global,
-  auth,
-});
-
-export type RootState = ReturnType<typeof rootReducer>;
+export * from './example.type';
 /**
  * ================================================================
  * NOTES

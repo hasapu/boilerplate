@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import Navigations from '../../src/navigations';
 import TabNavigator from './TabNavigator';
 /** => for intro view */
-import SplashView from '@screen/intro/views/splash.view';
+import IntroSplashView from '@core/screens/intro/views/intro-splash.view';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 enableScreens();
@@ -15,7 +15,7 @@ const StackNavigator: React.FC = () => {
     return (
       <Screen
         name="Intro"
-        component={SplashView}
+        component={IntroSplashView}
         options={{ headerShown: false }}
       />
     );

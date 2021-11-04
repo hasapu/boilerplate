@@ -1,10 +1,7 @@
-/**
- * ============================================================
- * ALL VARIABLE THAT WILL USED BY ACTIONS, REDUCERS, AND SAGAS
- * ============================================================
- */
-export * from '@core/data/types';
-export * from './example';
+/** === IMPORT ALL MODULE'S SCREEN VIEW HERE === */
+import IntroSplashView from './intro-splash.view';
+/** === EXPORT ALL === */
+export { IntroSplashView };
 /**
  * ================================================================
  * NOTES

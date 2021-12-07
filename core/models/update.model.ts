@@ -22,5 +22,6 @@ export interface UpdateProps {
 }
 /** === THIS FOR PROCESS CREATE DATA === */
 export interface UpdateProcessProps<T> {
+  id: string;
   data: T;
 }

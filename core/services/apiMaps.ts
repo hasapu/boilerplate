@@ -47,7 +47,6 @@ const apiMaps = async <T>(
   /** === THROW ERROR === */
   const throwError = (response: any) => {
     throw {
-      status: response.status,
       message: response.statusText,
       errorMessage: 'Data Error From Header',
       type: response.type,
@@ -57,7 +56,6 @@ const apiMaps = async <T>(
   /** === THROW FINAL ERROR === */
   const throwFinalError = (error: ErrorProps) => {
     throw {
-      status: error.status,
       message: error.message,
       errorMessage: error.errorMessage,
       type: error.type,

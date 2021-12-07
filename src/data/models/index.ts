@@ -15,6 +15,7 @@ export * from '@core/models/update-action.model';
 export * from '@core/models/delete-action.model';
 export * from '@core/models/error.model';
 export * from '@core/data/models';
+export * from './example';
 /**
  * ================================================================
  * NOTES

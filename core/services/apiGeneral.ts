@@ -1,7 +1,7 @@
 /** === IMPORT PACKAGE === */
 import { set, isEmpty } from 'lodash';
 import apiHost from './apiHost';
-import { NavigationAction } from '@navigation';
+import { uniqueId } from '@core/functions/global/device-data';
 /** === IMPORT MODEL === */
 import { ErrorProps } from '@models';
 /** === FUNCTION === */
@@ -17,7 +17,8 @@ const apiGeneral = async <T>(
   const headers = {};
   set(headers, 'Accept', 'application/json');
   set(headers, 'Content-Type', 'application/json');
-  set(headers, 'X-Platform', 'sinbad-app');
+  set(headers, 'x-platform', 'sinbad-app');
+  set(headers, 'x-device-id', uniqueId);
   /** === SET BODY === */
   const reqBody = {
     method,
@@ -29,7 +30,6 @@ const apiGeneral = async <T>(
   /** === IF THERE IS PARAMETER === */
   if (!isEmpty(params)) {
     Object.assign(reqBody, {
-      credentials: 'same-origin',
       body: JSON.stringify(params),
     });
   }
@@ -41,7 +41,9 @@ const apiGeneral = async <T>(
   const handleErrors = (response: any) => {
     if (!response.ok) {
       if (response.headers.map['content-type'] === 'text/html') {
-        NavigationAction.navigate('LoginPhoneView');
+        if (response.status === 401) {
+          console.log('not login');
+        }
         throwError(response);
       }
       return response.json().then((error: ErrorProps) => {
@@ -57,7 +59,6 @@ const apiGeneral = async <T>(
   /** === THROW ERROR === */
   const throwError = (response: any) => {
     throw {
-      status: response.status,
       message: response.statusText,
       errorMessage: 'Data Error From Header',
       type: response.type,
@@ -67,7 +68,6 @@ const apiGeneral = async <T>(
   /** === THROW FINAL ERROR === */
   const throwFinalError = (error: ErrorProps) => {
     throw {
-      status: error.status,
       message: error.message,
       errorMessage: error.errorMessage,
       type: error.type,
@@ -77,7 +77,7 @@ const apiGeneral = async <T>(
   /** === MAIN FUNCTION === */
   return fetch(
     `${apiHost.base}/${module}/api/${version}/sinbad-app/${
-      access === 'public' ? '/public/' : ''
+      access === 'public' ? 'public/' : ''
     }${path}`,
     reqBody,
   )

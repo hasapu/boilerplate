@@ -3,7 +3,7 @@
  * REGISTER ALL ACTIONS HERE
  * ============================================================
  */
-export * from './example';
+export * from './example-api.action';
 /**
  * ================================================================
  * NOTES

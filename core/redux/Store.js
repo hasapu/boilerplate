@@ -5,7 +5,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import { createLogger } from 'redux-logger';
 /** === IMPORT EXTERNAL FUNCTION === */
-import { rootReducer } from '@reducers';
+import { rootReducer } from '@reducer/store';
 import sagas from '@sagas';
 /** === SET PERSISTS === */
 const config = {

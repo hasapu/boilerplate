@@ -4,7 +4,7 @@
  * ============================================================
  */
 import { combineReducers } from 'redux';
-import { permanent, global, auth } from '@core/data/reducers';
+import { permanent, global, auth } from '@core/data/reducers/store';
 
 export const rootReducer = combineReducers({
   permanent,

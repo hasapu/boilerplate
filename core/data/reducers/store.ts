@@ -3,9 +3,9 @@
  * EXPORT ALL REDUCER HERE
  * ============================================================
  */
-export * from './permanent';
-export * from './global';
-export * from './auth';
+export * from './permanent/store';
+export * from './global/store';
+export * from './auth/store';
 /**
  * ================================================================
  * NOTES

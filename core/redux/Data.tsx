@@ -2,9 +2,9 @@
 import { useSelector } from 'react-redux';
 import * as models from '@models';
 /** === IMPORT EXTERNAL FUNCTION HERE === */
-import { RootState } from '@reducers';
+import { RootState } from '@reducer/store';
 /** === IMPORT TYPE === */
-import type { AuthProps } from '../data/reducers/auth';
+import type { AuthProps } from '../data/reducers/auth/store';
 /** === FUNCTION === */
 /** => for data permanent */
 const useDataPermanent = (): models.Permanent => {

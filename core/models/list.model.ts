@@ -5,6 +5,7 @@ export interface ListItemProps<T> {
   loadMore: boolean;
   refresh: boolean;
   page: number;
+  perPage: number;
   data: T;
   error: ErrorProps | null;
 }
@@ -24,6 +25,7 @@ export type ListProcessProps<T = object> = ListProcessDefaultProps & T;
 /** === THIS FOR PAGINATION === */
 export interface Pagination {
   page: number;
+  perPage: number;
 }
 /** === THIS FOR SUCCESS FETCH DATA === */
 export interface ListSuccessProps<T> {

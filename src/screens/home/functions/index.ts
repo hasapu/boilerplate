@@ -1,6 +1,5 @@
 /** === EXPORT ALL === */
-export * from './example-hook.function';
-export * from './example.function';
+export * from './home.function';
 /**
  * ================================================================
  * NOTES

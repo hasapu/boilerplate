@@ -1,6 +1,7 @@
+/** === IMPORT ALL STYLES HERE === */
+import HomeStyles from './home.style';
 /** === EXPORT ALL === */
-export * from './example-hook.function';
-export * from './example.function';
+export { HomeStyles };
 /**
  * ================================================================
  * NOTES

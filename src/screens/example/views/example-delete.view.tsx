@@ -4,53 +4,32 @@ import { View } from 'react-native';
 import { SnbContainer, SnbTopNav, SnbButton } from 'react-native-sinbad-ui';
 /** === IMPORT EXTERNAL COMPONENT === */
 /** === IMPORT EXTERNAL FUNCTION === */
-import { goBack, goToCreate, goToList } from '../functions';
+import { goBack } from '../functions';
 /** === STYLES === */
 import { ExampleStyles } from '../styles';
 /** === INTERFACE/MODEL === */
 /** === COMPONENT === */
-const ExampleView: React.FC = () => {
+const ExampleDeleteView: React.FC = () => {
   /** === HOOK === */
   /** === EFFECT === */
   /** === VIEW === */
   /** => header */
   const header = () => {
-    return (
-      <SnbTopNav.Type3
-        type="red"
-        title={'Standard API V2'}
-        backAction={goBack}
-      />
-    );
+    return <SnbTopNav.Type3 type="red" title={'Delete'} backAction={goBack} />;
   };
-  /** => list */
-  const list = () => {
+  /** => delete */
+  const dlt = () => {
     return (
       <SnbButton.Single
-        title={'List'}
-        onPress={() => goToList()}
-        type={'primary'}
-      />
-    );
-  };
-  /** => create */
-  const create = () => {
-    return (
-      <SnbButton.Single
-        title={'Create'}
-        onPress={() => goToCreate()}
+        title={'Delete'}
+        onPress={() => console.log('lallala')}
         type={'primary'}
       />
     );
   };
   /** => content */
   const content = () => {
-    return (
-      <View style={ExampleStyles.container}>
-        {list()}
-        {create()}
-      </View>
-    );
+    return <View style={ExampleStyles.container}>{dlt()}</View>;
   };
   /** => main */
   return (
@@ -61,7 +40,7 @@ const ExampleView: React.FC = () => {
   );
 };
 
-export default ExampleView;
+export default ExampleDeleteView;
 /**
  * ================================================================
  * NOTES

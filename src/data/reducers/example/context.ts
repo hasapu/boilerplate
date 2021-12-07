@@ -24,7 +24,8 @@ import {
 export type ExampleInitialProps = models.ListProps<models.Example[]> &
   models.DetailProps<models.Example> &
   models.CreateProps &
-  models.UpdateProps;
+  models.UpdateProps &
+  models.DeleteProps;
 /** === INITIAL HERE === */
 export const exampleInitialState = {
   list: exampleListInitialState,

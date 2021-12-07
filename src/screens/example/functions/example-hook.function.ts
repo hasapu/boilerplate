@@ -24,11 +24,18 @@ const useExampleListAction = () => {
       dispatch(Actions.exampleListReset());
       dispatch(callList(contextDispatch, true, 1));
     },
-    loadMore: (contextDispatch: (action: any) => any, page: number) => {
-      if (page > 0) {
+    loadMore: (
+      contextDispatch: (action: any) => any,
+      list: models.ListItemProps<models.Example[]>,
+    ) => {
+      if (
+        list.page > 0 &&
+        list.error === null &&
+        list.perPage <= list.data.length
+      ) {
         contextDispatch(Actions.exampleListLoadMore());
         dispatch(Actions.exampleListLoadMore());
-        dispatch(callList(contextDispatch, false, page));
+        dispatch(callList(contextDispatch, false, list.page));
       }
     },
     refresh: (contextDispatch: (action: any) => any) => {

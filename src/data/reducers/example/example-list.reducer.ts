@@ -12,6 +12,7 @@ export const exampleListInitialState: ExampleListInitialProps = {
   loadMore: false,
   refresh: false,
   page: 0,
+  perPage: 0,
 };
 /** === FUNCTION HERE === */
 export const exampleListReducer = simplifyReducer(exampleListInitialState, {
@@ -37,6 +38,7 @@ export const exampleListReducer = simplifyReducer(exampleListInitialState, {
       loading: false,
       loadMore: false,
       refresh: false,
+      perPage: action.payload.meta.perPage,
       page: action.payload.data.length !== 0 ? action.payload.meta.page + 1 : 0,
     };
   },

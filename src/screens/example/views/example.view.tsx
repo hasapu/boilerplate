@@ -1,9 +1,16 @@
 /** === IMPORT PACKAGE ===  */
 import React from 'react';
 import { View } from 'react-native';
-import { SnbContainer, SnbTopNav, SnbButton } from 'react-native-sinbad-ui';
+import {
+  SnbContainer,
+  SnbTopNav,
+  SnbButton,
+  SnbDialog,
+} from 'react-native-sinbad-ui';
 /** === IMPORT EXTERNAL COMPONENT === */
 /** === IMPORT EXTERNAL FUNCTION === */
+import { useAuthAction } from '@core/functions/auth/auth-hook.function';
+import { useDataAuth } from '@core/redux/Data';
 import { goBack, goToCreate, goToList } from '../functions';
 /** === STYLES === */
 import { ExampleStyles } from '../styles';
@@ -11,7 +18,21 @@ import { ExampleStyles } from '../styles';
 /** === COMPONENT === */
 const ExampleView: React.FC = () => {
   /** === HOOK === */
+  const authAction = useAuthAction();
+  const authData = useDataAuth();
+  /** === STATE === */
+  const [openModalLoginSuccess, setOpenModalLoginSuccess] =
+    React.useState(false);
   /** === EFFECT === */
+  /** => check login */
+  React.useEffect(() => {
+    if (authData.loginUsername.data !== null) {
+      setOpenModalLoginSuccess(true);
+    }
+    return () => {
+      authAction.resetLoginUsername();
+    };
+  }, [authData.loginUsername.data]);
   /** === VIEW === */
   /** => header */
   const header = () => {
@@ -20,6 +41,19 @@ const ExampleView: React.FC = () => {
         type="red"
         title={'Standard API V2'}
         backAction={goBack}
+      />
+    );
+  };
+  /** => list */
+  const login = () => {
+    return (
+      <SnbButton.Single
+        loading={authData.loginUsername.loading}
+        title={'Login'}
+        onPress={() =>
+          authAction.loginUserName({ username: '34389791', password: 'sinbad' })
+        }
+        type={'primary'}
       />
     );
   };
@@ -47,9 +81,22 @@ const ExampleView: React.FC = () => {
   const content = () => {
     return (
       <View style={ExampleStyles.container}>
+        {login()}
         {list()}
         {create()}
       </View>
+    );
+  };
+  /** => modal confirmation delete */
+  const modalLoginSuccess = () => {
+    return (
+      <SnbDialog
+        open={openModalLoginSuccess}
+        title="Success"
+        content="Login Success"
+        ok={() => setOpenModalLoginSuccess(false)}
+        cancel={() => setOpenModalLoginSuccess(false)}
+      />
     );
   };
   /** => main */
@@ -57,6 +104,7 @@ const ExampleView: React.FC = () => {
     <SnbContainer color="white">
       {header()}
       {content()}
+      {modalLoginSuccess()}
     </SnbContainer>
   );
 };

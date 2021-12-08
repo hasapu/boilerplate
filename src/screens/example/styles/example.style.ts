@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const ExampleStyles = StyleSheet.create({
   container: {
-    height: 200,
+    height: 300,
     paddingTop: 16,
   },
   detailContainer: {

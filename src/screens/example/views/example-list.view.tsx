@@ -36,8 +36,6 @@ const ExampleListView: React.FC = () => {
   const [openModalConfirmationDelete, setOpenModalConfirmationDelete] =
     React.useState(false);
   const [id, setId] = React.useState('');
-  const [heightFlatList, setHeightFlatList] = React.useState(0);
-  const [heightContent, setHeightContent] = React.useState(0);
   /** === EFFECT === */
   /** => get list */
   React.useEffect(() => {
